@@ -31,6 +31,8 @@
     };
 
     keymap {
+        compatible = "zmk,keymap";
+
         normal_layer {
             display-name = "normal";
             bindings = <
