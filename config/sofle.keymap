@@ -26,43 +26,15 @@
     };
 
     macros {
-        next_word: next_word {
+        vim_w: vim_w {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LC(RIGHT)>;
-            label = "NEXT_WORD";
-        };
-
-        prev_word: prev_word {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LC(LEFT)>;
-            label = "PREV_WORD";
-        };
-
-        end_word: end_word {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LC(RIGHT) &kp LEFT_ARROW>;
-            label = "END_WORD";
-        };
-
-        append: append {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp RIGHT &to 0>;
-            label = "APPEND";
+            bindings = <&kp LC(RIGHT_ARROW) &kp LC(RIGHT_ARROW) &kp LC(LEFT_ARROW)>;
+            label = "VIM_W";
         };
     };
 
-    combos {
-        compatible = "zmk,combos";
-
-        to_normal {
-            bindings = <&to 3>;
-            key-positions = <31 32>;
-        };
-    };
+    combos { compatible = "zmk,combos"; };
 
     keymap {
         compatible = "zmk,keymap";
@@ -81,7 +53,7 @@
 &kp ESCAPE  &kp N1  &kp N2     &kp N3        &kp N4    &kp N5                           &kp N6  &kp N7     &kp N8     &kp N9         &kp N0    &kp MINUS
 &kp TAB     &kp Q   &kp W      &kp E         &kp R     &kp T                            &kp Y   &kp U      &kp I      &kp O          &kp P     &kp BSPC
 &kp GRAVE   &kp A   &kp S      &kp D         &kp F     &kp G                            &kp H   &kp J      &kp K      &kp L          &kp SEMI  &kp SQT
-&kp LSHFT   &kp Z   &kp X      &kp C         &kp V     &kp B   &kp C_MUTE    &none      &kp N   &kp M      &kp COMMA  &kp DOT        &kp FSLH  &kp RSHFT
+&kp LSHFT   &kp Z   &kp X      &kp C         &kp V     &kp B   &kp C_MUTE    &none      &kp N   &kp M      &kp COMMA  &kp DOT        &kp FSLH  &kp EQUAL
                     &kp LCTRL  &kp LEFT_GUI  &kp LALT  &mo 1   &kp RET       &kp SPACE  &mo 2   &kp RCTRL  &kp RWIN   &kp RIGHT_ALT
             >;
 
@@ -121,26 +93,16 @@
             //                |      |       |       |      |      |  |      |      |      |       |      |
 
             bindings = <
-&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                    &trans     &trans    &trans    &trans     &trans   &trans
-&trans      &kp INS       &kp PSCRN     &kp K_CMENU   &trans        &trans                          &kp PG_UP  &trans    &kp UP    &trans     &kp N0   &trans
-&trans      &kp LALT      &kp LCTRL     &kp LSHFT     &trans        &kp CLCK                        &kp PG_DN  &kp LEFT  &kp DOWN  &kp RIGHT  &kp DEL  &kp BSPC
-&trans      &kp K_UNDO    &kp K_CUT     &kp K_COPY    &kp K_PASTE   &trans        &trans    &trans  &trans     &trans    &trans    &trans     &trans   &trans
-                          &trans        &trans        &trans        &trans        &trans    &trans  &trans     &trans    &trans    &trans
+&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2         &bt BT_SEL 3  &bt BT_SEL 4                          &trans           &trans       &trans         &trans       &trans   &kp DEL
+&trans      &kp INS       &vim_w        &kp LC(RIGHT_ARROW)  &trans        &trans                                &kp K_COPY       &kp PAGE_UP  &kp PAGE_DOWN  &kp K_PASTE  &kp N0   &trans
+&trans      &kp LALT      &kp LCTRL     &kp LSHFT            &trans        &kp CLCK                              &kp LEFT_ARROW   &kp DOWN     &kp UP_ARROW   &kp RIGHT    &kp DEL  &kp BSPC
+&trans      &kp K_UNDO    &kp K_CUT     &trans               &trans        &kp LC(LEFT_ARROW)  &trans    &trans  &kp PRINTSCREEN  &kp HOME     &kp END        &trans       &trans   &trans
+                          &trans        &trans               &trans        &trans              &trans    &trans  &trans           &trans       &trans         &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
-        };
-
-        normal_layer {
-            bindings = <
-&kp ESC  &none    &none       &none      &none  &none                       &none       &none     &none   &none      &none        &none
-&none    &none    &next_word  &end_word  &none  &none                       &kp K_COPY  &none     &to 0   &none      &kp K_PASTE  &none
-&none    &append  &none       &kp K_CUT  &none  &none                       &kp LEFT    &kp DOWN  &kp UP  &kp RIGHT  &none        &none
-&none    &none    &none       &none      &none  &prev_word  &none    &none  &none       &none     &none   &none      &none        &none
-                  &none       &none      &none  &none       &none    &none  &none       &none     &none   &none
-            >;
-
-            label = "normal_layer";
+            sensor-bindings =
+                <&inc_dec_kp C_VOL_UP C_VOL_DN>,
+                <&inc_dec_kp C_BRIGHTNESS_INC C_BRIGHTNESS_DEC>;
         };
     };
 };
