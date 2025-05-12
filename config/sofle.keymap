@@ -39,6 +39,13 @@
             bindings = <&kp END &kp ENTER>;
             label = "NEWLINEBELOW";
         };
+
+        changetoeol: changetoeol {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(END) &kp BACKSPACE>;
+            label = "CHANGETOEOL";
+        };
     };
 
     combos { compatible = "zmk,combos"; };
@@ -100,11 +107,11 @@
             //                |      |       |       |      |      |  |      |      |      |       |      |
 
             bindings = <
-&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2         &bt BT_SEL 3   &bt BT_SEL 4                          &trans           &trans      &trans         &trans       &trans   &kp DEL
-&trans      &kp INS       &vim_w        &kp LC(RIGHT_ARROW)  &kp PAGE_UP    &trans                                &kp K_COPY       &kp K_UNDO  &NewLineBelow  &kp K_PASTE  &kp N0   &trans
-&trans      &kp LALT      &kp LCTRL     &kp LSHFT            &kp PAGE_DOWN  &kp CLCK                              &kp LEFT_ARROW   &kp DOWN    &kp UP_ARROW   &kp RIGHT    &kp DEL  &kp BSPC
-&trans      &trans        &kp K_CUT     &trans               &trans         &kp LC(LEFT_ARROW)  &trans    &trans  &kp PRINTSCREEN  &kp HOME    &kp END        &trans       &trans   &trans
-                          &trans        &trans               &trans         &trans              &trans    &trans  &trans           &trans      &trans         &trans
+&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2         &bt BT_SEL 3   &bt BT_SEL 4                          &trans          &trans           &trans         &trans       &trans  &trans
+&trans      &trans        &vim_w        &kp LC(RIGHT_ARROW)  &kp PAGE_UP    &trans                                &kp K_COPY      &kp K_UNDO       &NewLineBelow  &kp K_PASTE  &trans  &kp DEL
+&trans      &trans        &trans        &kp DEL              &kp PAGE_DOWN  &kp CLCK                              &kp LEFT_ARROW  &kp DOWN         &kp UP_ARROW   &kp RIGHT    &trans  &trans
+&trans      &trans        &kp K_CUT     &changetoeol         &trans         &kp LC(LEFT_ARROW)  &trans    &trans  &kp HOME        &kp PRINTSCREEN  &trans         &kp END      &trans  &trans
+                          &trans        &trans               &trans         &trans              &trans    &trans  &trans          &trans           &trans         &trans
             >;
 
             sensor-bindings =
