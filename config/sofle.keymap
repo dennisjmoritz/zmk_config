@@ -108,7 +108,7 @@
 
             bindings = <
 &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2         &bt BT_SEL 3   &bt BT_SEL 4                          &trans          &trans           &trans        &trans         &trans       &trans
-&trans      &trans        &vim_w        &kp LC(RIGHT_ARROW)  &kp PAGE_UP    &trans                                &kp K_COPY      &kp K_UNDO       &trans        &NewLineBelow  &kp K_PASTE  &kp DEL
+&trans      &trans        &vim_w        &kp LC(RIGHT_ARROW)  &kp PAGE_UP    &trans                                &kp K_COPY      &kp LC(Z)        &trans        &NewLineBelow  &kp K_PASTE  &kp DEL
 &trans      &trans        &trans        &kp DEL              &kp PAGE_DOWN  &trans                                &kp LEFT_ARROW  &kp DOWN         &kp UP_ARROW  &kp RIGHT      &trans       &trans
 &trans      &trans        &kp K_CUT     &changetoeol         &trans         &kp LC(LEFT_ARROW)  &trans    &trans  &kp HOME        &kp PRINTSCREEN  &trans        &kp END        &trans       &trans
                           &trans        &trans               &trans         &trans              &trans    &trans  &trans          &trans           &trans        &trans
