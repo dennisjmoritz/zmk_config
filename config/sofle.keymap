@@ -270,7 +270,7 @@
         normal {
             bindings = <
 &none  &none  &none   &none  &none  &none                    &none     &none     &none   &none        &none   &none
-&none  &none  &vim_w  &none  &none  &none                    &sl 5     &none     &to 1   &vim_o       &vim_p  &none
+&none  &none  &vim_w  &none  &none  &none                    &sl 5     &none     &to 0   &vim_o       &vim_p  &none
 &none  &none  &none   &sl 6  &none  &vim_gg                  &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT    &none   &none
 &mo 4  &none  &vim_x  &none  &none  &vim_b   &none    &none  &none     &none     &none   &vim_search  &none   &none
               &none   &none  &none  &none    &none    &none  &to 0     &none     &none   &none
