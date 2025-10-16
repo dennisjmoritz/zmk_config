@@ -124,31 +124,31 @@
         vim_I_cap: vim_I_cap {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp HOME>;
+            bindings = <&kp HOME &to 0>;
         };
 
         vim_a: vim_a {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp RIGHT>;
+            bindings = <&kp RIGHT &to 0>;
         };
 
         vim_A_cap: vim_A_cap {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp END>;
+            bindings = <&kp END &to 0>;
         };
 
         vim_o: vim_o {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp END &kp ENTER>;
+            bindings = <&kp END &kp ENTER &to 0>;
         };
 
         vim_O_cap: vim_O_cap {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp HOME &kp UP &kp END &kp ENTER>;
+            bindings = <&kp HOME &kp UP &kp END &kp ENTER &to 0>;
         };
 
         // Search
