@@ -273,18 +273,19 @@
             // Change: cw ciw C (cut, then release RAISE to insert)
             // Yank: yw yy (copy to clipboard)
             // Insert: i I a A o O (move cursor, release RAISE to insert)
+            // Navigation: h j k l = arrows, 0 $ = Home/End
             // ------------------------------------------------------------------------------------------------------------
-            // | gg   | G    | O    | o    | dd   | D    |                | yy   | yw   | Ct-u | i    | p    | DEL   |
+            // | gg   | G    | O    | o    | dd   | D    |                | yy   | yw   | Ct-u | ESC  | p    | DEL   |
             // | TAB  | ESC  | w    | de   | dw   | cw   |                | I    | h    | j    | k    | l    | BSPC  |
-            // | a    | A    | x    | X    | db   | ciw  |                | 0    | h    | j    | k    | l    | $     |
-            // | SHIFT| N    | /    | n    | Ct-d | b    | MUTE |  | PP   | C    | b    | w    |Ct-d  |Ct-u  | SHIFT |
+            // | a    | A    | x    | X    | db   | ciw  |                | 0    | $    | Ct-d | Ct-u | b    | w     |
+            // | SHIFT| N    | /    | n    | C    | b    | MUTE |  | PP   | RET  | SPC  | TAB  | ESC  | BSPC | SHIFT |
             //               | GUI  | ALT  | CTRL |LOWER |ENTER |  | SPACE|(hold)| CTRL | ALT  | GUI  |
 
             bindings = <
 &vim_gg     &vim_G    &vim_O      &vim_o    &vim_dd    &vim_D                            &vim_yy    &vim_yw      &kp PG_UP  &kp ESC    &vim_p     &kp DEL
 &kp TAB     &kp ESC   &vim_w      &vim_de   &vim_dw    &vim_cw                           &vim_I     &kp LEFT     &kp DOWN   &kp UP     &kp RIGHT  &kp BSPC
-&vim_a      &vim_A    &vim_x      &vim_X    &vim_db    &vim_ciw                          &kp HOME   &kp LEFT     &kp DOWN   &kp UP     &kp RIGHT  &kp END
-&kp LSHFT   &vim_N    &vim_search &vim_n    &kp PG_DN  &vim_b   &kp C_MUTE    &kp C_PP   &vim_C     &vim_b       &vim_w     &kp PG_DN  &kp PG_UP  &kp RSHFT
+&vim_a      &vim_A    &vim_x      &vim_X    &vim_db    &vim_ciw                          &kp HOME   &kp END      &kp PG_DN  &kp PG_UP  &vim_b     &vim_w
+&kp LSHFT   &vim_N    &vim_search &vim_n    &vim_C     &vim_b   &kp C_MUTE    &kp C_PP   &kp RET    &kp SPACE    &kp TAB    &kp ESC    &kp BSPC   &kp RSHFT
                       &kp LGUI    &kp LALT  &kp LCTRL  &mo 1    &kp RET       &kp SPACE  &none      &kp RCTRL    &kp RALT   &kp RGUI
             >;
 
