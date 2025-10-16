@@ -98,7 +98,7 @@
             bindings = <&kp LC(LS(RIGHT)) &kp LC(X)>;
         };
 
-        vim_C: vim_C {
+        vim_C_cap: vim_C_cap {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LS(END) &kp LC(X)>;
