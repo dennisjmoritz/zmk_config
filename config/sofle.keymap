@@ -26,25 +26,189 @@
     };
 
     macros {
+        // Navigation macros (these don't change layers)
         vim_w: vim_w {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LC(RIGHT_ARROW) &kp LC(RIGHT_ARROW) &kp LC(LEFT_ARROW)>;
+            bindings = <&kp LC(RIGHT)>;
             label = "VIM_W";
         };
 
-        NewLineBelow: NewLineBelow {
+        vim_b: vim_b {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(LEFT)>;
+            label = "VIM_B";
+        };
+
+        // Delete (cut) operations
+        vim_x: vim_x {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(RIGHT) &kp LC(X)>;
+            label = "VIM_X";
+        };
+
+        vim_X: vim_X {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(LEFT) &kp LC(X)>;
+            label = "VIM_X_CAP";
+        };
+
+        vim_dw: vim_dw {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(LS(RIGHT)) &kp LC(X)>;
+            label = "VIM_DW";
+        };
+
+        vim_db: vim_db {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(LS(LEFT)) &kp LC(X)>;
+            label = "VIM_DB";
+        };
+
+        vim_de: vim_de {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(LS(RIGHT)) &kp LC(X)>;
+            label = "VIM_DE";
+        };
+
+        vim_dd: vim_dd {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp HOME &kp LS(END) &kp LC(X)>;
+            label = "VIM_DD";
+        };
+
+        vim_D: vim_D {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(END) &kp LC(X)>;
+            label = "VIM_D_CAP";
+        };
+
+        // Change operations (cut, cursor positioned for insert, user releases RAISE to enter insert mode)
+        vim_cw: vim_cw {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(LS(RIGHT)) &kp LC(X)>;
+            label = "VIM_CW";
+        };
+
+        vim_ciw: vim_ciw {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(LS(RIGHT)) &kp LC(X)>;
+            label = "VIM_CIW";
+        };
+
+        vim_C: vim_C {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(END) &kp LC(X)>;
+            label = "VIM_C_CAP";
+        };
+
+        // Yank (copy) operations
+        vim_yw: vim_yw {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(LS(RIGHT)) &kp LC(C)>;
+            label = "VIM_YW";
+        };
+
+        vim_yy: vim_yy {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp HOME &kp LS(END) &kp LC(C)>;
+            label = "VIM_YY";
+        };
+
+        // Insert mode operations (position cursor, user releases RAISE to enter insert mode)
+        // vim_i: just release RAISE, no macro needed
+        
+        vim_I: vim_I {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp HOME>;
+            label = "VIM_I_CAP";
+        };
+
+        vim_a: vim_a {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp RIGHT>;
+            label = "VIM_A";
+        };
+
+        vim_A: vim_A {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp END>;
+            label = "VIM_A_CAP";
+        };
+
+        vim_o: vim_o {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp END &kp ENTER>;
-            label = "NEWLINEBELOW";
+            label = "VIM_O";
         };
 
-        changetoeol: changetoeol {
+        vim_O: vim_O {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LS(END) &kp BACKSPACE>;
-            label = "CHANGETOEOL";
+            bindings = <&kp HOME &kp UP &kp END &kp ENTER>;
+            label = "VIM_O_CAP";
+        };
+
+        // Search
+        vim_search: vim_search {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(F)>;
+            label = "VIM_SEARCH";
+        };
+
+        vim_n: vim_n {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp F3>;
+            label = "VIM_N";
+        };
+
+        vim_N: vim_N {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(F3)>;
+            label = "VIM_N_CAP";
+        };
+
+        // File navigation
+        vim_gg: vim_gg {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(HOME)>;
+            label = "VIM_GG";
+        };
+
+        vim_G: vim_G {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(END)>;
+            label = "VIM_G_CAP";
+        };
+
+        // Paste
+        vim_p: vim_p {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(V)>;
+            label = "VIM_P";
         };
     };
 
@@ -99,19 +263,55 @@
         raise_layer {
             display-name = "raise";
 
+            // Vim Normal Mode Layer (Linux only, using OS-wide shortcuts)
+            // Hold RAISE for normal mode, release for insert mode
+            // 
+            // Left side: Vim commands (delete, change, yank, insert operations)
+            // Right side: Navigation (hjkl, word, line, file, page)
+            //
+            // Delete: x X dw db de dd D (all cut to clipboard)
+            // Change: cw ciw C (cut, then release RAISE to insert)
+            // Yank: yw yy (copy to clipboard)
+            // Insert: i I a A o O (move cursor, release RAISE to insert)
+            // Navigation: h j k l = arrows, 0 $ = Home/End
             // ------------------------------------------------------------------------------------------------------------
-            // | BTCLR | BT1  | BT2  |  BT3  |  BT4  |  BT5 |                |      |      |       |      |       |       |
-            // |       | INS  | PSCR | GUI   |       |      |                | PGUP |      |   ^   |      |       |       |
-            // |       | ALT  | CTRL | SHIFT |       | CAPS |                | PGDN |   <- |   v   |  ->  |  DEL  | BKSPC |
-            // |       | UNDO | CUT  | COPY  | PASTE |      |      |  |      |      |      |       |      |       |       |
-            //                |      |       |       |      |      |  |      |      |      |       |      |
+            // | gg   | G    | O    | o    | dd   | D    |                | yy   | yw   | Ct-u | ESC  | p    | DEL   |
+            // | TAB  | ESC  | w    | de   | dw   | cw   |                | I    | h    | j    | k    | l    | BSPC  |
+            // | a    | A    | x    | X    | db   | ciw  |                | 0    | $    | Ct-d | Ct-u | RET  | SPC   |
+            // | SHIFT| N    | /    | n    | C    | b    | MUTE |  | PP   | w    | TAB  | F1   | F2   | F3   | SHIFT |
+            //               | GUI  | ALT  | CTRL |LOWER |ENTER |  | SPACE|(hold)| CTRL | ALT  | GUI  |
 
             bindings = <
-&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2         &bt BT_SEL 3   &bt BT_SEL 4                          &trans          &trans           &trans        &trans         &trans       &trans
-&soft_off   &trans        &vim_w        &kp LC(RIGHT_ARROW)  &kp PAGE_UP    &trans                                &kp K_COPY      &kp LC(Z)        &to 0         &NewLineBelow  &kp K_PASTE  &kp DEL
-&trans      &trans        &trans        &kp DEL              &kp PAGE_DOWN  &trans                                &kp LEFT_ARROW  &kp DOWN         &kp UP_ARROW  &kp RIGHT      &trans       &trans
-&trans      &trans        &kp K_CUT     &changetoeol         &trans         &kp LC(LEFT_ARROW)  &trans    &trans  &kp HOME        &kp PRINTSCREEN  &trans        &kp END        &trans       &trans
-                          &trans        &trans               &trans         &trans              &trans    &trans  &trans          &trans           &trans        &trans
+&vim_gg     &vim_G    &vim_O      &vim_o    &vim_dd    &vim_D                            &vim_yy    &vim_yw      &kp PG_UP  &kp ESC    &vim_p     &kp DEL
+&kp TAB     &kp ESC   &vim_w      &vim_de   &vim_dw    &vim_cw                           &vim_I     &kp LEFT     &kp DOWN   &kp UP     &kp RIGHT  &kp BSPC
+&vim_a      &vim_A    &vim_x      &vim_X    &vim_db    &vim_ciw                          &kp HOME   &kp END      &kp PG_DN  &kp PG_UP  &kp RET    &kp SPACE
+&kp LSHFT   &vim_N    &vim_search &vim_n    &vim_C     &vim_b   &kp C_MUTE    &kp C_PP   &vim_w     &kp TAB      &kp F1     &kp F2     &kp F3     &kp RSHFT
+                      &kp LGUI    &kp LALT  &kp LCTRL  &mo 1    &kp RET       &kp SPACE  &none      &kp RCTRL    &kp RALT   &kp RGUI
+            >;
+
+            sensor-bindings =
+                <&inc_dec_kp C_VOL_UP C_VOL_DN>,
+                <&inc_dec_kp C_BRIGHTNESS_INC C_BRIGHTNESS_DEC>;
+        };
+
+        adjust_layer {
+            display-name = "adjust";
+
+            // Adjustment layer for Bluetooth and system controls
+            // Activated when both LOWER and RAISE are held
+            // ------------------------------------------------------------------------------------------------------------
+            // | BTCLR| BT1  | BT2  | BT3  | BT4  | BT5  |                |      |      |      |      |      |SOFTOFF|
+            // |      |      |      |      |      |      |                |      |      |      |      |      |       |
+            // |      |      |      |      |      |      |                |      |      |      |      |      |       |
+            // |      |      |      |      |      |      |      |  |      |      |      |      |      |      |       |
+            //               |      |      |      |      |      |  |      |      |      |      |      |
+
+            bindings = <
+&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                    &none  &none  &none  &none  &none  &soft_off
+&none       &none         &none         &none         &none         &none                           &none  &none  &none  &none  &none  &none
+&none       &none         &none         &none         &none         &none                           &none  &none  &none  &none  &none  &none
+&none       &none         &none         &none         &none         &none         &none     &none   &none  &none  &none  &none  &none  &none
+                          &none         &none         &none         &none         &none     &none   &none  &none  &none  &none
             >;
 
             sensor-bindings =
