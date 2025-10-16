@@ -32,14 +32,12 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LC(RIGHT)>;
-            label = "VIM_W";
         };
 
         vim_b: vim_b {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LC(LEFT)>;
-            label = "VIM_B";
         };
 
         // Delete (cut) operations
@@ -48,49 +46,42 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LS(RIGHT) &kp LC(X)>;
-            label = "VIM_X";
         };
 
         vim_X: vim_X {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LS(LEFT) &kp LC(X)>;
-            label = "VIM_X_CAP";
         };
 
         vim_dw: vim_dw {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LC(LS(RIGHT)) &kp LC(X)>;
-            label = "VIM_DW";
         };
 
         vim_db: vim_db {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LC(LS(LEFT)) &kp LC(X)>;
-            label = "VIM_DB";
         };
 
         vim_de: vim_de {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LC(LS(RIGHT)) &kp LC(X)>;
-            label = "VIM_DE";
         };
 
         vim_dd: vim_dd {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp HOME &kp LS(END) &kp LC(X)>;
-            label = "VIM_DD";
         };
 
         vim_D: vim_D {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LS(END) &kp LC(X)>;
-            label = "VIM_D_CAP";
         };
 
         // Change operations (cut, cursor positioned for insert, user releases RAISE to enter insert mode)
@@ -99,21 +90,18 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LC(LS(RIGHT)) &kp LC(X)>;
-            label = "VIM_CW";
         };
 
         vim_ciw: vim_ciw {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LC(LS(RIGHT)) &kp LC(X)>;
-            label = "VIM_CIW";
         };
 
         vim_C: vim_C {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LS(END) &kp LC(X)>;
-            label = "VIM_C_CAP";
         };
 
         // Yank (copy) operations
@@ -122,14 +110,12 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LC(LS(RIGHT)) &kp LC(C)>;
-            label = "VIM_YW";
         };
 
         vim_yy: vim_yy {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp HOME &kp LS(END) &kp LC(C)>;
-            label = "VIM_YY";
         };
 
         // Insert mode operations (position cursor, user releases RAISE to enter insert mode)
@@ -139,35 +125,30 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp HOME>;
-            label = "VIM_I_CAP";
         };
 
         vim_a: vim_a {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp RIGHT>;
-            label = "VIM_A";
         };
 
         vim_A: vim_A {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp END>;
-            label = "VIM_A_CAP";
         };
 
         vim_o: vim_o {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp END &kp ENTER>;
-            label = "VIM_O";
         };
 
         vim_O: vim_O {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp HOME &kp UP &kp END &kp ENTER>;
-            label = "VIM_O_CAP";
         };
 
         // Search
@@ -176,21 +157,18 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LC(F)>;
-            label = "VIM_SEARCH";
         };
 
         vim_n: vim_n {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp F3>;
-            label = "VIM_N";
         };
 
         vim_N: vim_N {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LS(F3)>;
-            label = "VIM_N_CAP";
         };
 
         // File navigation
@@ -199,14 +177,12 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LC(HOME)>;
-            label = "VIM_GG";
         };
 
         vim_G: vim_G {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LC(END)>;
-            label = "VIM_G_CAP";
         };
 
         // Paste
@@ -215,7 +191,6 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LC(V)>;
-            label = "VIM_P";
         };
     };
 
