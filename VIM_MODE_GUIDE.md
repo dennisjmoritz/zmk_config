@@ -25,7 +25,7 @@ All navigation commands work while holding RAISE:
 - **w** = Move forward one word (Ctrl+Right)
 - **b** = Move backward one word (Ctrl+Left)
 
-*Location: Row 2 left (w), Row 4 left/right (b, w)*
+*Location: Row 2 left (w), Row 4 left (b), Row 4 right (w)*
 
 ### Line Navigation
 - **0** = Move to line start (Home)
@@ -109,11 +109,11 @@ These commands position the cursor and prepare for insert mode. Release RAISE af
 
 ```
 ┌─────┬─────┬─────┬─────┬─────┬─────┐                ┌─────┬─────┬─────┬─────┬─────┬─────┐
-│ gg  │  G  │  O  │  o  │ dd  │  D  │                │ yy  │ yw  │PgUp │ ESC │  p  │ DEL │
+│ gg  │  G  │  O  │  o  │ dd  │  D  │                │ yy  │ yw  │Ct-u │ ESC │  p  │ DEL │
 ├─────┼─────┼─────┼─────┼─────┼─────┤                ├─────┼─────┼─────┼─────┼─────┼─────┤
 │ TAB │ ESC │  w  │ de  │ dw  │ cw  │                │  I  │  h  │  j  │  k  │  l  │BKSP │
 ├─────┼─────┼─────┼─────┼─────┼─────┤                ├─────┼─────┼─────┼─────┼─────┼─────┤
-│  a  │  A  │  x  │  X  │ db  │ciw  │                │  0  │  $  │PgDn │PgUp │ RET │ SPC │
+│  a  │  A  │  x  │  X  │ db  │ciw  │                │  0  │  $  │Ct-d │Ct-u │ RET │ SPC │
 ├─────┼─────┼─────┼─────┼─────┼─────┼─────┐  ┌─────┼─────┼─────┼─────┼─────┼─────┼─────┤
 │SHIFT│  N  │  /  │  n  │  C  │  b  │MUTE │  │ PP  │  w  │ TAB │ F1  │ F2  │ F3  │SHIFT│
 └─────┴─────┴─────┼─────┼─────┼─────┼─────┤  ├─────┼─────┼─────┼─────┼─────┴─────┴─────┘
