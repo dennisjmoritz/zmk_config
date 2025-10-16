@@ -48,7 +48,7 @@
             bindings = <&kp LS(RIGHT) &kp LC(X)>;
         };
 
-        vim_X: vim_X {
+        vim_X_cap: vim_X_cap {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LS(LEFT) &kp LC(X)>;
@@ -78,7 +78,7 @@
             bindings = <&kp HOME &kp LS(END) &kp LC(X)>;
         };
 
-        vim_D: vim_D {
+        vim_D_cap: vim_D_cap {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LS(END) &kp LC(X)>;
@@ -121,7 +121,7 @@
         // Insert mode operations (position cursor, user releases RAISE to enter insert mode)
         // vim_i: just release RAISE, no macro needed
 
-        vim_I: vim_I {
+        vim_I_cap: vim_I_cap {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp HOME>;
@@ -133,7 +133,7 @@
             bindings = <&kp RIGHT>;
         };
 
-        vim_A: vim_A {
+        vim_A_cap: vim_A_cap {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp END>;
@@ -145,7 +145,7 @@
             bindings = <&kp END &kp ENTER>;
         };
 
-        vim_O: vim_O {
+        vim_O_cap: vim_O_cap {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp HOME &kp UP &kp END &kp ENTER>;
@@ -165,7 +165,7 @@
             bindings = <&kp F3>;
         };
 
-        vim_N: vim_N {
+        vim_N_cap: vim_N_cap {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LS(F3)>;
@@ -179,7 +179,7 @@
             bindings = <&kp LC(HOME)>;
         };
 
-        vim_G: vim_G {
+        vim_G_cap: vim_G_cap {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LC(END)>;
@@ -282,9 +282,9 @@
         shift_norm {
             bindings = <
 &trans  &trans  &trans  &trans  &kp HOME  &trans                    &trans   &trans  &trans  &trans  &kp END  &trans
-&trans  &trans  &trans  &trans  &trans    &trans                    &vim_yy  &trans  &vim_I  &vim_O  &trans   &trans
-&trans  &vim_A  &trans  &vim_D  &trans    &vim_G                    &trans   &trans  &trans  &trans  &trans   &trans
-&trans  &trans  &vim_X  &vim_C  &trans    &trans  &trans    &trans  &vim_N   &trans  &trans  &trans  &trans   &trans
+&trans  &trans  &trans  &trans  &trans    &trans                    &vim_yy  &trans  &vim_I_cap  &vim_O_cap  &trans   &trans
+&trans  &vim_A_cap  &trans  &vim_D_cap  &trans    &vim_G_cap                    &trans   &trans  &trans  &trans  &trans   &trans
+&trans  &trans  &vim_X_cap  &vim_C_cap  &trans    &trans  &trans    &trans  &vim_N_cap   &trans  &trans  &trans  &trans   &trans
                 &trans  &trans  &trans    &trans  &trans    &trans  &trans   &trans  &trans  &trans
             >;
         };
